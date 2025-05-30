@@ -123,6 +123,32 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Start of change: Added/updated DisclosurePanel to sit above the particle canvas */}
+      <DisclosurePanel className="sm:hidden absolute inset-x-0 top-full bg-gray-800 p-4 z-50">
+        <div className="space-y-1">
+          {navigation.map((item) => {
+            const sectionId = item.href.slice(1);
+            const isActive = activeSection === sectionId;
+            return (
+              <a
+                key={item.name}
+                href={item.href}
+                aria-current={isActive ? "page" : undefined}
+                className={classNames(
+                  isActive
+                    ? "bg-gray-900 text-white"
+                    : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                  "block rounded-md px-3 py-2 text-base font-medium"
+                )}
+              >
+                {item.name}
+              </a>
+            );
+          })}
+        </div>
+      </DisclosurePanel>
+      {/* End of change */}
     </Disclosure>
   );
 }
