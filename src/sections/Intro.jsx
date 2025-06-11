@@ -94,7 +94,7 @@ export default function Intro() {
       id="intro"
       className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
     >
-      {particlesEl}
+      {/* {particlesEl} */}
       <h1 className="text-5xl font-bold z-10">
         {prefix && <>{prefix} </>}
         <span className="text-blue-400">{lastWord}</span>

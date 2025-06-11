@@ -8,6 +8,7 @@ import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 
 import Navbar from "./components/Navbar";
+import SkillsCarousel from "./components/SkillsCarousel";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -16,6 +17,7 @@ function App() {
     <div className="font-sans text-gray-900 pt-16">
       <Navbar />
       <Intro />
+      <SkillsCarousel />
       <About />
       <Projects />
       <Contact />
