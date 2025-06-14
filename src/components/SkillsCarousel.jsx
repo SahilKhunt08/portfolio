@@ -27,7 +27,7 @@ export default function SkillsCarousel() {
         </p>
       </div>
 
-      <div className="mt-10 max-w-screen-lg mx-auto px-4">
+      <div className="mt-10 ph-16 mx-auto px-4 ">
         <Marquee
           pauseOnHover={false}
           speed={70}
@@ -37,7 +37,7 @@ export default function SkillsCarousel() {
           {skills.map((skill, index) => (
             <div
               key={index}
-              className="mx-6 bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center w-44 h-44 transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+              className="mx-6 bg-gray-700 rounded-lg shadow-md p-6 flex flex-col items-center justify-center w-48 h-48 transform transition-transform duration-300 scale-90 hover:scale-100 hover:shadow-xl"
             >
               <img
                 src={skill.img}

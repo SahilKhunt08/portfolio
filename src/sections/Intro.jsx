@@ -92,14 +92,23 @@ export default function Intro() {
   return (
     <section
       id="intro"
-      className="relative min-h-screen flex items-center justify-center bg-gray-900 text-white overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white overflow-hidden"
     >
       {/* {particlesEl} */}
-      <h1 className="text-5xl font-bold z-10">
+      <h1 className="text-3xl sm:text-5xl font-bold z-10 text-center">
         {prefix && <>{prefix} </>}
         <span className="text-blue-400">{lastWord}</span>
         <Cursor cursorStyle="|" cursorColor="#4287f5" />
       </h1>
+      <button
+        onClick={() => {
+          const about = document.getElementById("about");
+          if (about) about.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="mt-8 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300 z-10"
+      >
+        View My Work
+      </button>
     </section>
   );
 }
