@@ -1,9 +1,6 @@
 import { memo, useMemo } from "react";
 import { useTypewriter, Cursor } from "react-simple-typewriter";
 
-/* ╔══════════════════════════════════════════╗
-   ║                CONFIG                    ║
-   ╚══════════════════════════════════════════╝ */
 const ACTIVE_FRACTION = 0.35; // 0.2 ⇒ ~20% of paths get a star
 const MIN_SPEED = 5; // seconds (fastest)
 const MAX_SPEED = 10; // seconds (slowest)
