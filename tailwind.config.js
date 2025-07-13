@@ -8,6 +8,9 @@ export default {
         fredoka: ['"Fredoka"', "sans-serif"],
         quicksand: ['"Quicksand"', "sans-serif"],
       },
+      colors: {
+        'indigo': '#5c6ac4',
+      },
     },
   },
   plugins: [],
