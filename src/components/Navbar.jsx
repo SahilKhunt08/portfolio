@@ -5,7 +5,7 @@ import {
   DisclosurePanel,
   Transition,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logoV1 from "../assets/logoV1.png";
 
 const navigation = [
@@ -65,9 +65,9 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className={`fixed inset-x-0 top-0 z-50 bg-gray-800 shadow
-        transition-transform duration-300
-        ${hidden ? "-translate-y-full" : "translate-y-0"}`}
+      className={`fixed inset-x-0 top-0 z-50 bg-gray-800/30 backdrop-blur-md shadow transition-transform duration-300 ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
     >
       {({ open }) => (
         <>
@@ -75,7 +75,7 @@ export default function Navbar() {
             <div className="relative flex h-16 items-center justify-between">
               {/* Mobile menu button */}
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
+                <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset">
                   <span className="sr-only">Open main menu</span>
                   <div className="grid justify-items-center gap-1.5">
                     <span
@@ -97,13 +97,11 @@ export default function Navbar() {
                 </DisclosureButton>
               </div>
 
-              {/* Logo */}
+              {/* Logo & Desktop Nav */}
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex shrink-0 items-center">
                   <img src={logoV1} alt="SK Logo" className="h-8 w-auto" />
                 </div>
-
-                {/* Desktop nav links */}
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => {
@@ -129,20 +127,21 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Notification icon */}
-              {/* <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
-              type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden"
-            >
-              <span className="sr-only">View notifications</span>
-              <BellIcon className="size-6" aria-hidden="true" />
-            </button>
-          </div> */}
+              {/* Resume Button */}
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                <a
+                  href="/personal-website/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white text-gray-800 hover:bg-gray-100 rounded-md px-3 py-2 text-sm font-medium"
+                >
+                  Resume
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Start of change: Added/updated DisclosurePanel to sit above the particle canvas */}
+          {/* Mobile menu panel */}
           <Transition
             as={Fragment}
             enter="transition ease-out duration-300 transform"
@@ -152,7 +151,7 @@ export default function Navbar() {
             leaveFrom="scale-y-100 opacity-100"
             leaveTo="scale-y-0 opacity-0"
           >
-            <DisclosurePanel className="sm:hidden absolute inset-x-0 top-full bg-gray-800 transform origin-top p-4">
+            <DisclosurePanel className="sm:hidden absolute inset-x-0 top-full bg-gray-800 origin-top p-4">
               <div className="space-y-1">
                 {navigation.map((item) => {
                   const sectionId = item.href.slice(1);
@@ -173,10 +172,18 @@ export default function Navbar() {
                     </a>
                   );
                 })}
+                {/* Also include Resume in mobile menu */}
+                <a
+                  href="/personal-website/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white text-gray-800 hover:bg-gray-100 rounded-md px-3 py-2 text-base font-medium"
+                >
+                  Resume
+                </a>
               </div>
             </DisclosurePanel>
           </Transition>
-          {/* End of change */}
         </>
       )}
     </Disclosure>
