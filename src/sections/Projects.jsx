@@ -1,125 +1,93 @@
 import ProjectCard from "../components/ProjectCard";
 
+import impulse1 from "../assets/projects/impulseworkoutapp/pic1.png";
+import impulse2 from "../assets/projects/impulseworkoutapp/pic2.png";
+import impulse3 from "../assets/projects/impulseworkoutapp/pic3.png";
+import cher1 from "../assets/projects/cher/pic1.png";
+import webscrapers1 from "../assets/projects/webscrapers/pic1.png";
+import nnc1 from "../assets/projects/nnc/pic1.png";
+import nnc2 from "../assets/projects/nnc/pic2.png";
+import nnc3 from "../assets/projects/nnc/pic3.png";
+
 export default function Projects() {
   const projectData = [
     {
-      title: "FILLER TaskMaster Pro",
+      title: "Quadrotor Neural Controller",
       description:
-        "A comprehensive web app for managing tasks, deadlines, and team collaboration with real-time updates.",
-      techStack: ["Next.js", "TypeScript", "GraphQL", "PostgreSQL"],
+        "Neural network controller for quadrotors using Lyapunov-based training to ensure stable flight.",
+      techStack: ["Python", "TensorFlow", "PyBullet"],
       features: [
-        "Drag-and-drop kanban board with custom workflows.",
-        "Role-based permissions and team assignments.",
-        "Real-time notifications via WebSockets.",
-        "Built-in reports and analytics dashboard.",
+        "Lyapunov-based loss function to enforce provable stability during neural network training.",
+        "Custom neural controller architecture trained on high-fidelity quadrotor dynamics simulations.",
+        "Real-time simulation tests under variable payloads and wind disturbances to validate robustness.",
+        "Ran custom simulations with PyBullet on single, double, and inverted pendulums.",
       ],
-      images: [
-        "https://via.placeholder.com/800x400?text=TaskMaster+1",
-        "https://via.placeholder.com/800x400?text=TaskMaster+2",
-        "https://via.placeholder.com/800x400?text=TaskMaster+3",
-      ],
-      type: "Web",
+      images: [nnc1, nnc2, nnc3],
+      type: "AI",
     },
     {
-      title: "FILLER PhotoSnap",
+      title: "Impulse Workout App",
       description:
-        "A mobile app for snapping, filtering, and instantly sharing photos with friends and followers.",
-      techStack: ["React Native", "Expo", "Firebase", "TypeScript"],
+        "A collaborative fitness app that helps users create, share, and follow workout routines with real-time progress tracking.",
+      techStack: ["React Native", "Expo", "Firebase"],
+      features: [
+        "Intuitive workout builder for easily creating and organizing custom routines.",
+        "Timed workouts with rest intervals and progress tracking.",
+        "Multiple fitness APIs providing detailed exercise data.",
+        "Custom leaderboards and challenges to compete with friends.",
+      ],
+      images: [impulse1, impulse2, impulse3],
+      type: "Mobile",
+    },
+    {
+      title: "C.H.E.R. – Comprehensive Human Emotion Recognition",
+      description:
+        "C.H.E.R. uses AI and computer vision to help parents and schools detect early signs of depression in teens, aiming to prevent suicide by notifying trusted adults so teens can get the help they need.",
+      techStack: [
+        "Python",
+        "TensorFlow (Keras)",
+        "OpenCV",
+        "React",
+        "Firebase",
+      ],
+      features: [
+        "1st place team at district-wide hackathon (Fremd Hacks).",
+        "Artificial intelligence model trained on over 35,000 images of human emotion.",
+        "Uses computer vision to detect real-time emotions in subjects.",
+        "Built to detect signs of declining mental health and alert trusted adults.",
+      ],
+      images: [cher1],
+      type: "AI",
+    },
+    {
+      title: "Webscrapers",
+      description: "An online web development business ",
+      techStack: ["React", "Firebase", "Tailwind CSS", "Vite"],
       features: [
         "30+ built-in photo filters and adjustment tools.",
         "Stories and ephemeral posts that disappear after 24h.",
         "In-app chat with image and video support.",
         "Offline capture and automatic sync on reconnect.",
       ],
-      images: [
-        "https://via.placeholder.com/800x400?text=PhotoSnap+1",
-        "https://via.placeholder.com/800x400?text=PhotoSnap+2",
-      ],
-      type: "Mobile",
-    },
-    {
-      title: "FILLER CryptoTracker",
-      description:
-        "An API service that aggregates real-time cryptocurrency prices, portfolio values, and market alerts.",
-      techStack: ["Node.js", "Express", "MongoDB", "Redis"],
-      features: [
-        "RESTful endpoints for price, volume, and market cap.",
-        "Webhook alerts for price thresholds.",
-        "Historical data charts via Highcharts integration.",
-        "API key management and rate limiting.",
-      ],
-      images: [
-        "https://via.placeholder.com/800x400?text=CryptoTracker+1",
-        "https://via.placeholder.com/800x400?text=CryptoTracker+2",
-        "https://via.placeholder.com/800x400?text=CryptoTracker+3",
-      ],
-      type: "API",
-    },
-    {
-      title: "FILLER EcoShop",
-      description:
-        "A green-ecommerce platform that highlights sustainable brands and tracks your carbon footprint per purchase.",
-      techStack: ["Vue.js", "Nuxt", "Stripe", "Docker"],
-      features: [
-        "Sustainability score on every product page.",
-        "One-click checkout with carbon offset calculation.",
-        "Vendor portal for inventory and order management.",
-        "Containerized deployment with Kubernetes support.",
-      ],
-      images: [
-        "https://via.placeholder.com/800x400?text=EcoShop+1",
-        "https://via.placeholder.com/800x400?text=EcoShop+2",
-      ],
+      images: [webscrapers1],
       type: "Web",
-    },
-    {
-      title: "FILLER ChatWise",
-      description:
-        "An AI-powered chatbot framework for websites and messaging apps with customizable personalities.",
-      techStack: ["Python", "FastAPI", "OpenAI API", "Docker"],
-      features: [
-        "Plug-and-play persona templates (support, sales, FAQ).",
-        "Contextual memory across multi-turn conversations.",
-        "Dashboard for monitoring conversations and metrics.",
-        "Easy on-premise or cloud container deployment.",
-      ],
-      images: [
-        "https://via.placeholder.com/800x400?text=ChatWise+1",
-        "https://via.placeholder.com/800x400?text=ChatWise+2",
-        "https://via.placeholder.com/800x400?text=ChatWise+3",
-      ],
-      type: "AI",
-    },
-    {
-      title: "FILLER GameArcade",
-      description:
-        "A browser-based gaming portal hosting HTML5 mini-games and live leaderboards.",
-      techStack: ["Phaser.js", "JavaScript", "HTML5", "CSS3"],
-      features: [
-        "15+ arcade-style games with high-score tracking.",
-        "Player profiles with achievements and badges.",
-        "Real-time multiplayer rooms using Socket.io.",
-        "Custom game editor for adding new levels.",
-      ],
-      images: [
-        "https://via.placeholder.com/800x400?text=GameArcade+1",
-        "https://via.placeholder.com/800x400?text=GameArcade+2",
-      ],
-      type: "Game",
     },
   ];
 
   return (
-    <section
-      id="projects"
-      className="min-h-screen bg-[#0A0A0A] text-white px-6 py-16"
-    >
-      <h2 className="text-4xl font-bold mb-10 text-center">Projects</h2>
+    <section id="projects" className="bg-[#0A0A0A] text-white">
+      <div className="container mx-auto px-6 py-16">
+        <h2 className="text-4xl font-bold mb-10 text-center font-grotesk">
+          Featured Projects
+        </h2>
 
-      <div className="grid gap-8 md:grid-cols-2 justify-items-center">
-        {projectData.map((project, idx) => (
-          <ProjectCard key={idx} {...project} />
-        ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 justify-items-center">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-8 justify-items-stretch"> */}
+
+          {projectData.map((project, idx) => (
+            <ProjectCard key={idx} {...project} />
+          ))}
+        </div>
       </div>
     </section>
   );

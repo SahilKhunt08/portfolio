@@ -7,6 +7,7 @@ export default {
         nunito: ['"Nunito"', "sans-serif"],
         fredoka: ['"Fredoka"', "sans-serif"],
         quicksand: ['"Quicksand"', "sans-serif"],
+        grotesk: ['"Space Grotesk"', 'sans-serif'],
       },
       colors: {
         'indigo': '#5c6ac4',

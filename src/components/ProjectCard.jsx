@@ -19,33 +19,38 @@ export default function ProjectCard({
     <div
       className="
     group bg-gradient-to-bl from-[#2D2D2D] to-[#1A1A1A]
-    text-white rounded-xl shadow-lg w-full max-w-md overflow-hidden
+    text-white rounded-xl shadow-lg w-full max-w-lg overflow-hidden 
     transition-transform duration-300 ease-in-out
     hover:scale-105 hover:shadow-2xl
   "
     >
-      {/* Image Carousel */}
-      <Swiper modules={[Navigation]} navigation className="w-full h-64">
-        {images.map((src, idx) => (
-          <SwiperSlide
-            key={idx}
-            className="w-full h-64 bg-[#333333] flex items-center justify-center"
-          >
-            {!errored[idx] && (
-              <img
-                src={src}
-                alt={`Slide ${idx + 1}`}
-                className="w-full h-full object-cover"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                  setErrored((prev) => ({ ...prev, [idx]: true }));
-                }}
-              />
-            )}
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
+      {" "}
+      {/* Remove max-w-lg from above */}
+      <div className="px-6 pt-6">
+        <div className="rounded-lg overflow-hidden">
+          {/* Image Carousel */}
+          <Swiper modules={[Navigation]} navigation className="w-full h-64">
+            {images.map((src, idx) => (
+              <SwiperSlide
+                key={idx}
+                className="w-full h-64 bg-[#333333] flex items-center justify-center"
+              >
+                {!errored[idx] && (
+                  <img
+                    src={src}
+                    alt={`Slide ${idx + 1}`}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      setErrored((prev) => ({ ...prev, [idx]: true }));
+                    }}
+                  />
+                )}
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
       {/* Content */}
       <div className="p-6 space-y-4">
         {/* Type Tag */}
