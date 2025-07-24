@@ -1,95 +1,134 @@
-// src/sections/About.jsx
 import React from "react";
+import TimelineCard from "../components/TimelineCard";
+import {
+  CodeBracketIcon,
+  RocketLaunchIcon,
+  AcademicCapIcon,
+  CalculatorIcon,
+} from "@heroicons/react/24/solid";
 
 export default function About() {
+  const cardsData = [
+    {
+      id: 1,
+      Icon: CodeBracketIcon,
+      title: "FiPet (fipet.dev)",
+      time: "June 2025 - Now",
+      gradientFrom: "yellow-600",
+      gradientTo: "orange-500",
+      timeBgClass: "bg-yellow-700",
+      gradient: "from-yellow-600 to-orange-500",
+      align: "end",
+      description: (
+        <>
+          Launched a personal portfolio at <code>fipet.dev</code> built with
+          Next.js and Tailwind CSS to showcase my projects, blog, and résumé.
+        </>
+      ),
+    },
+    {
+      id: 2,
+      Icon: RocketLaunchIcon,
+      title: "Illinois Space Society (ISS)",
+      time: "Sept. 2024 - Now",
+      gradientFrom: "purple-900",
+      gradientTo: "purple-500",
+      timeBgClass: "bg-purple-800",
+      gradient: "from-purple-900 to-purple-500",
+      align: "start",
+      description:
+        "Developed Lyapunov-stable neural controllers and Kalman-filter trackers for quadrotor and rocket guidance on the GNC sub-team.",
+    },
+    {
+      id: 3,
+      Icon: AcademicCapIcon,
+      title: "CompSci Kids",
+      time: "Aug. 2022 - May 2024",
+      gradientFrom: "green-600",
+      gradientTo: "teal-600",
+      timeBgClass: "bg-green-700",
+      gradient: "from-green-600 to-teal-600",
+      align: "end",
+      description:
+        "Led a club teaching 5–8ᵗʰ graders CS fundamentals: built curriculum, supervised mentors, and ran weekly classes.",
+    },
+    {
+      id: 4,
+      Icon: CalculatorIcon,
+      title: "Mathnasium",
+      time: "June 2023 - Jan. 2024",
+      gradientFrom: "blue-800",
+      gradientTo: "blue-500",
+      timeBgClass: "bg-blue-900",
+      gradient: "from-blue-800 to-blue-500",
+      align: "start",
+      description:
+        "Tutored middle-schoolers in math problem-solving techniques as a part-time instructor for six months.",
+    },
+  ];
+
   return (
     <section
       id="about"
-      className="min-h-screen flex items-center justify-center bg-black text-white"
+      className="min-h-screen flex items-center justify-center bg-black text-white py-16"
     >
-      <ol className="relative border-l border-gray-700">
-        {/* FiPet */}
-        <li className="mb-10 ml-6">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-white rounded-full -left-3 ring-8 ring-black">
-            <svg
-              className="w-3 h-3 text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M6 2a1 1 0 000 2h8a1 1 0 100-2H6zM3 6a1 1 0 011-1h12a1 1 0 010 2H4a1 1 0 01-1-1zm1 3h12a1 1 0 110 2H4a1 1 0 110-2zm-1 3a1 1 0 011-1h12a1 1 0 010 2H4a1 1 0 01-1-1z" />
-            </svg>
-          </span>
-          <h3 className="mb-1 text-lg font-semibold">FiPet (fipet.dev)</h3>
-          <time className="block mb-2 text-sm text-gray-400">July 2025</time>
-          <p className="text-gray-300">
-            Launched a personal portfolio at <code>fipet.dev</code> built with
-            Next.js and Tailwind CSS to showcase my projects, blog, and resume.
-          </p>
-        </li>
+      <div className="relative w-full max-w-6xl">
+        {/* Desktop-only timeline */}
+        <div className="hidden md:block relative">
+          {/* Centre rail */}
+          <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-gray-700 via-white to-gray-700" />
+          <ol className="relative space-y-20 px-4">
+            {cardsData.map((card) => (
+              <TimelineCard
+                key={card.id}
+                Icon={card.Icon}
+                title={card.title}
+                time={card.time}
+                gradientFrom={card.gradientFrom}
+                gradientTo={card.gradientTo}
+                align={card.align}
+              >
+                {card.description}
+              </TimelineCard>
+            ))}
+          </ol>
+        </div>
 
-        {/* ISS */}
-        <li className="mb-10 ml-6">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-white rounded-full -left-3 ring-8 ring-black">
-            <svg
-              className="w-3 h-3 text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 12H9v-2h2v2zm0-4H9V6h2v4z" />
-            </svg>
-          </span>
-          <h3 className="mb-1 text-lg font-semibold">
-            Illinois Space Society (ISS)
-          </h3>
-          <time className="block mb-2 text-sm text-gray-400">Feb 2025</time>
-          <p className="text-gray-300">
-            Developed Lyapunov‐stable neural controllers and Kalman‐filter
-            trackers for quadrotor and rocket guidance on the GNC subteam.
-          </p>
-        </li>
-
-        {/* CompSci Kids */}
-        <li className="mb-10 ml-6">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-white rounded-full -left-3 ring-8 ring-black">
-            <svg
-              className="w-3 h-3 text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v10H5V5z" />
-            </svg>
-          </span>
-          <h3 className="mb-1 text-lg font-semibold">CompSci Kids</h3>
-          <time className="block mb-2 text-sm text-gray-400">2022 – 2023</time>
-          <p className="text-gray-300">
-            Led a club teaching 5–8th graders CS fundamentals: built curriculum,
-            supervised mentors, and ran weekly classes.
-          </p>
-        </li>
-
-        {/* Mathnasium */}
-        <li className="ml-6">
-          <span className="absolute flex items-center justify-center w-6 h-6 bg-white rounded-full -left-3 ring-8 ring-black">
-            <svg
-              className="w-3 h-3 text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-            >
-              <path d="M2 2h16v2H2V2zm0 4h12v2H2V6zm0 4h8v2H2v-2zm0 4h4v2H2v-2z" />
-            </svg>
-          </span>
-          <h3 className="mb-1 text-lg font-semibold">Mathnasium</h3>
-          <time className="block mb-2 text-sm text-gray-400">2021 – 2022</time>
-          <p className="text-gray-300">
-            Tutored middle‐schoolers in math problem‐solving techniques as a
-            part‐time instructor for six months.
-          </p>
-        </li>
-      </ol>
+        {/* Mobile-only timeline */}
+        <div className="relative md:hidden">
+          {/* Mobile rail */}
+          <div className="absolute inset-y-0 left-8 w-px bg-gradient-to-b from-gray-700 via-white to-gray-700 z-0" />
+          <ol className="space-y-8">
+            {cardsData.map((card, idx) => (
+              <li key={card.id} className="relative flex items-center">
+                <span className="absolute left-8 transform -translate-x-1/2 z-10 flex-shrink-0 flex items-center justify-center w-8 h-8 bg-white rounded-full ring-8 ring-black">
+                  <card.Icon
+                    className="w-4 h-4 text-black"
+                    aria-hidden="true"
+                  />
+                </span>
+                <div
+                  className={`ml-16 mr-4 flex-1 p-4 rounded-lg shadow-lg ${
+                    idx % 2 === 1 ? "bg-gradient-to-l" : "bg-gradient-to-r"
+                  } ${card.gradient}`}
+                >
+                  <div className="flex justify-between items-center mb-2">
+                    <h3 className="text-lg font-semibold">{card.title}</h3>
+                    <time
+                      className={`${card.timeBgClass} whitespace-nowrap text-gray-100 text-xs px-2 py-0.5 rounded-full`}
+                    >
+                      {card.time}
+                    </time>
+                  </div>
+                  <div className="text-gray-100 text-sm">
+                    {card.description}
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </section>
   );
 }
