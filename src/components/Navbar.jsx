@@ -136,7 +136,7 @@ export default function Navbar() {
               {/* Resume Button */}
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <a
-                  href="/personal-website/resume.pdf"
+                  href="/portfolio/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-white text-gray-800 hover:bg-gray-100 rounded-md px-3 py-2 text-sm font-medium"
@@ -180,7 +180,7 @@ export default function Navbar() {
                 })}
                 {/* Also include Resume in mobile menu */}
                 <a
-                  href="/personal-website/resume.pdf"
+                  href="/portfolio/resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-white text-gray-800 hover:bg-gray-100 rounded-md px-3 py-2 text-base font-medium"
