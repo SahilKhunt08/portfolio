@@ -17,7 +17,7 @@ function App() {
     <div className="font-sans text-gray-900 pt-16">
       <Navbar />
       <Intro />
-      <SkillsCarousel />
+      {/* <SkillsCarousel /> */}
       <About />
       <Projects />
       <Contact />

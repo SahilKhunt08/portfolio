@@ -1,12 +1,12 @@
 import Marquee from "react-fast-marquee";
 
 const skills = [
-  { name: "Java", img: "src/assets/skills/java.svg" },
-  { name: "Python", img: "src/assets/skills/python.svg" },
-  { name: "React", img: "src/assets/skills/react.svg" },
-  { name: "Tailwind", img: "src/assets/skills/tailwindcss.svg" },
-  { name: "C++", img: "src/assets/skills/cplusplus.svg" },
-  { name: "Firebase", img: "src/assets/skills/firebase.svg" },
+  { name: "Java", img: "./src/assets/skills/java.svg" },
+  { name: "Python", img: "./src/assets/skills/python.svg" },
+  { name: "React", img: "./src/assets/skills/react.svg" },
+  { name: "Tailwind", img: "./src/assets/skills/tailwindcss.svg" },
+  { name: "C++", img: "./src/assets/skills/cplusplus.svg" },
+  { name: "Firebase", img: "./src/assets/skills/firebase.svg" },
   {
     name: "JavaScript",
     img: "src/assets/skills/javascript.svg",

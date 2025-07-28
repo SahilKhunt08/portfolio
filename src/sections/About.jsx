@@ -1,5 +1,7 @@
 import React from "react";
 import TimelineCard from "../components/TimelineCard";
+import SkillsGrid from "../components/SkillsGrid";
+
 import {
   CodeBracketIcon,
   RocketLaunchIcon,
@@ -68,67 +70,70 @@ export default function About() {
   ];
 
   return (
-    <section
-      id="about"
-      className="min-h-screen flex items-center justify-center bg-black text-white py-16"
-    >
-      <div className="relative w-full max-w-6xl">
-        {/* Desktop-only timeline */}
-        <div className="hidden md:block relative">
-          {/* Centre rail */}
-          <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-gray-700 via-white to-gray-700" />
-          <ol className="relative space-y-20 px-4">
-            {cardsData.map((card) => (
-              <TimelineCard
-                key={card.id}
-                Icon={card.Icon}
-                title={card.title}
-                time={card.time}
-                gradientFrom={card.gradientFrom}
-                gradientTo={card.gradientTo}
-                align={card.align}
-              >
-                {card.description}
-              </TimelineCard>
-            ))}
-          </ol>
-        </div>
-
-        {/* Mobile-only timeline */}
-        <div className="relative md:hidden">
-          {/* Mobile rail */}
-          <div className="absolute inset-y-0 left-8 w-px bg-gradient-to-b from-gray-700 via-white to-gray-700 z-0" />
-          <ol className="space-y-8">
-            {cardsData.map((card, idx) => (
-              <li key={card.id} className="relative flex items-center">
-                <span className="absolute left-8 transform -translate-x-1/2 z-10 flex-shrink-0 flex items-center justify-center w-8 h-8 bg-white rounded-full ring-8 ring-black">
-                  <card.Icon
-                    className="w-4 h-4 text-black"
-                    aria-hidden="true"
-                  />
-                </span>
-                <div
-                  className={`ml-16 mr-4 flex-1 p-4 rounded-lg shadow-lg ${
-                    idx % 2 === 1 ? "bg-gradient-to-l" : "bg-gradient-to-r"
-                  } ${card.gradient}`}
+    <div>
+      <SkillsGrid />
+      <section
+        id="about"
+        className="min-h-screen flex items-center justify-center bg-black text-white py-16"
+      >
+        <div className="relative w-full max-w-6xl">
+          {/* Desktop-only timeline */}
+          <div className="hidden md:block relative">
+            {/* Centre rail */}
+            <div className="absolute inset-y-0 left-1/2 w-px bg-gradient-to-b from-gray-700 via-white to-gray-700" />
+            <ol className="relative space-y-20 px-4">
+              {cardsData.map((card) => (
+                <TimelineCard
+                  key={card.id}
+                  Icon={card.Icon}
+                  title={card.title}
+                  time={card.time}
+                  gradientFrom={card.gradientFrom}
+                  gradientTo={card.gradientTo}
+                  align={card.align}
                 >
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-lg font-semibold">{card.title}</h3>
-                    <time
-                      className={`${card.timeBgClass} whitespace-nowrap text-gray-100 text-xs px-2 py-0.5 rounded-full`}
-                    >
-                      {card.time}
-                    </time>
+                  {card.description}
+                </TimelineCard>
+              ))}
+            </ol>
+          </div>
+
+          {/* Mobile-only timeline */}
+          <div className="relative md:hidden">
+            {/* Mobile rail */}
+            <div className="absolute inset-y-0 left-8 w-px bg-gradient-to-b from-gray-700 via-white to-gray-700 z-0" />
+            <ol className="space-y-8">
+              {cardsData.map((card, idx) => (
+                <li key={card.id} className="relative flex items-center">
+                  <span className="absolute left-8 transform -translate-x-1/2 z-10 flex-shrink-0 flex items-center justify-center w-8 h-8 bg-white rounded-full ring-8 ring-black">
+                    <card.Icon
+                      className="w-4 h-4 text-black"
+                      aria-hidden="true"
+                    />
+                  </span>
+                  <div
+                    className={`ml-16 mr-4 flex-1 p-4 rounded-lg shadow-lg ${
+                      idx % 2 === 1 ? "bg-gradient-to-l" : "bg-gradient-to-r"
+                    } ${card.gradient}`}
+                  >
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="text-lg font-semibold">{card.title}</h3>
+                      <time
+                        className={`${card.timeBgClass} whitespace-nowrap text-gray-100 text-xs px-2 py-0.5 rounded-full`}
+                      >
+                        {card.time}
+                      </time>
+                    </div>
+                    <div className="text-gray-100 text-sm">
+                      {card.description}
+                    </div>
                   </div>
-                  <div className="text-gray-100 text-sm">
-                    {card.description}
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ol>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
