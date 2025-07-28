@@ -171,10 +171,11 @@ const StreakBackground = memo(() => {
 export default function Intro() {
   const [typed] = useTypewriter({
     words: [
-      "I am a Backend Developer.",
-      "I am a Web Designer.",
-      "I am a Designer.",
+      "I am a Developer.",
       "I am a Software Engineer.",
+      "I am a Computer Scientist.",
+      "I am a Web Designer.",
+      "I am a Problem Solver.",
     ],
     loop: true,
     typeSpeed: 100,
@@ -210,7 +211,7 @@ export default function Intro() {
         }
         className="relative z-10 mt-8 rounded-lg bg-blue-500 px-6 py-3 font-semibold text-white shadow-md transition duration-300 hover:bg-blue-600"
       >
-        View My Work
+        Get to Know Me
       </button>
     </section>
   );

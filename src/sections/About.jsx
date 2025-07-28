@@ -1,6 +1,7 @@
 import React from "react";
-import TimelineCard from "../components/TimelineCard";
+import BioSection from "../components/BioSection";
 import SkillsGrid from "../components/SkillsGrid";
+import TimelineCard from "../components/TimelineCard";
 
 import {
   CodeBracketIcon,
@@ -21,12 +22,8 @@ export default function About() {
       timeBgClass: "bg-yellow-700",
       gradient: "from-yellow-600 to-orange-500",
       align: "end",
-      description: (
-        <>
-          Launched a personal portfolio at <code>fipet.dev</code> built with
-          Next.js and Tailwind CSS to showcase my projects, blog, and résumé.
-        </>
-      ),
+      description:
+        "Oversaw the development of a product website as Web Dev Lead, managing a team at a startup to highlight their app.",
     },
     {
       id: 2,
@@ -52,7 +49,7 @@ export default function About() {
       gradient: "from-green-600 to-teal-600",
       align: "end",
       description:
-        "Led a club teaching 5–8ᵗʰ graders CS fundamentals: built curriculum, supervised mentors, and ran weekly classes.",
+        "Led a club teaching 5–8ᵗʰ graders CS fundamentals: built custom curriculum, supervised volunteers, and ran weekly classes.",
     },
     {
       id: 4,
@@ -65,18 +62,22 @@ export default function About() {
       gradient: "from-blue-800 to-blue-500",
       align: "start",
       description:
-        "Tutored middle-schoolers in math problem-solving techniques as a part-time instructor for six months.",
+        "Tutored K–12 students in foundational math skills, offering both homework assistance and exam preparation as lead instructor.",
     },
   ];
 
   return (
     <div>
+      <BioSection />
       <SkillsGrid />
       <section
-        id="about"
-        className="min-h-screen flex items-center justify-center bg-black text-white py-16"
+        id="experience"
+        className="min-h-screen flex flex-col items-center bg-[#0A0A0A] text-white py-16"
       >
-        <div className="relative w-full max-w-6xl">
+        <div className="w-full max-w-6xl px-4">
+          <h2 className="text-4xl font-bold text-center mb-12">
+            My Experience
+          </h2>
           {/* Desktop-only timeline */}
           <div className="hidden md:block relative">
             {/* Centre rail */}

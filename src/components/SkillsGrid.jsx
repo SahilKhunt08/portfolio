@@ -63,8 +63,8 @@ export default function SkillsGrid() {
     "https://cdn.jsdelivr.net/gh/tandpfun/skill-icons@main/icons/";
 
   return (
-    <section className="min-h-screen w-full md:px-8 xl:px-20 text-white bg-black flex items-center">
-      <div className="flex container flex-col md:flex-row items-center md:items-start gap-16 w-full">
+    <section className="py-30 w-full bg-[#0A0A0A] text-white flex justify-center">
+      <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-16">
         {/* Left Side */}
         <div className="w-full md:w-1/2 relative p-6 sm:px-28 md:p-0">
           <div className="text-white p-6 pl-10 pr-20 sm:pl-10 lg:pr-20">
@@ -125,7 +125,7 @@ export default function SkillsGrid() {
               return (
                 <div key={idx} className="text-center group">
                   <div className="p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110">
-                    <img src={src} alt={name} className="w-10 h-10" />
+                    <img src={src} alt={name} className="w-11 h-11" />
                     <p className="text-xs mt-2">{name}</p>
                   </div>
                 </div>

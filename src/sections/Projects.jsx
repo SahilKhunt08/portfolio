@@ -52,7 +52,7 @@ export default function Projects() {
       ],
       features: [
         "1st place team at district-wide hackathon (Fremd Hacks).",
-        "Artificial intelligence model trained on over 35,000 images of human emotion.",
+        "AI model trained on over 35,000 images of human emotion.",
         "Uses computer vision to detect real-time emotions in subjects.",
         "Built to detect signs of declining mental health and alert trusted adults.",
       ],
@@ -61,13 +61,14 @@ export default function Projects() {
     },
     {
       title: "Webscrapers",
-      description: "An online web development business ",
+      description:
+        "An online web development business launched to help local organizations and small clients build and modernize their websites.",
       techStack: ["React", "Firebase", "Tailwind CSS", "Vite"],
       features: [
-        "30+ built-in photo filters and adjustment tools.",
-        "Stories and ephemeral posts that disappear after 24h.",
-        "In-app chat with image and video support.",
-        "Offline capture and automatic sync on reconnect.",
+        "Started a web development business focused on building clean, responsive sites for small clients.",
+        "Worked with a local nonprofit to redesign their website.",
+        "The new site led to increased volunteer sign-ups and community event attendence.",
+        "Led a small team of student developers to assist with site builds and feature implementations.",
       ],
       images: [webscrapers1],
       type: "Web",

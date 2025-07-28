@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="bg-gray-900 text-white px-6 py-16 text-center"
+      className="bg-[#0A0A0A] text-white px-6 pt-16 pb-30 text-center"
     >
       <h2 className="text-3xl font-semibold mb-4">
         Thanks for checking out my work!
