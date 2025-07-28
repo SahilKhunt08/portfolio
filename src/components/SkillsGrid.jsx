@@ -1,18 +1,67 @@
-import React from "react";
-import JavaIcon from "devicon/icons/java/java-original.svg";
-import PythonIcon from "devicon/icons/python/python-original.svg";
-import CPlusPlusIcon from "devicon/icons/cplusplus/cplusplus-original.svg";
-import JavaScriptIcon from "devicon/icons/javascript/javascript-original.svg";
-import FirebaseIcon from "devicon/icons/firebase/firebase-original.svg";
-import TensorflowIcon from "devicon/icons/tensorflow/tensorflow-original.svg";
-import ReactIcon from "devicon/icons/react/react-original.svg";
-import TailwindCSSIcon from "devicon/icons/tailwindcss/tailwindcss-original.svg";
-import SwiftIcon from "devicon/icons/swift/swift-original.svg";
-import RIcon from "devicon/icons/r/r-original.svg";
-import OpenCVIcon from "devicon/icons/opencv/opencv-original.svg";
-import NextjsIcon from "devicon/icons/nextjs/nextjs-original.svg";
+import React, { useState } from "react";
 
 export default function SkillsGrid() {
+  const [activeTab, setActiveTab] = useState("skills");
+
+  const iconFiles = {
+    // skills
+    Java: "Java-Dark.svg",
+    Python: "Python-Dark.svg",
+    "C++": "CPP.svg",
+    JavaScript: "JavaScript.svg",
+    Firebase: "Firebase-Dark.svg",
+    Tensorflow: "TensorFlow-Dark.svg",
+    React: "React-Dark.svg",
+    TailwindCSS: "TailwindCSS-Dark.svg",
+    Swift: "Swift.svg",
+    R: "R-Dark.svg",
+    OpenCV: "OpenCV-Dark.svg",
+    NextJS: "NextJS-Dark.svg",
+    // tools
+    "VS Code": "VSCode-Dark.svg",
+    Xcode:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xcode/xcode-original.svg",
+    Git: "Git.svg",
+    GitHub: "Github-Dark.svg",
+    Docker: "Docker.svg",
+    "Jupyter Notebook":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg",
+    "Google Colab":
+      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecolab/googlecolab-original.svg",
+    Figma: "Figma-Dark.svg",
+  };
+
+  const skills = [
+    "Java",
+    "Python",
+    "C++",
+    "JavaScript",
+    "Firebase",
+    "Tensorflow",
+    "React",
+    "TailwindCSS",
+    "Swift",
+    "R",
+    "OpenCV",
+    "NextJS",
+  ];
+
+  const tools = [
+    "VS Code",
+    "Xcode",
+    "Git",
+    "GitHub",
+    "Docker",
+    "Jupyter Notebook",
+    "Google Colab",
+    "Figma",
+  ];
+
+  const list = activeTab === "skills" ? skills : tools;
+
+  const baseUrl =
+    "https://cdn.jsdelivr.net/gh/tandpfun/skill-icons@main/icons/";
+
   return (
     <section className="min-h-screen w-full md:px-8 xl:px-20 text-white bg-black flex items-center">
       <div className="flex container flex-col md:flex-row items-center md:items-start gap-16 w-full">
@@ -32,16 +81,30 @@ export default function SkillsGrid() {
           </div>
 
           <p className="p-3 text-gray-400 text-sm leading-relaxed">
-            These are the tools and technologies that I use daily to develop web
-            applications. With a strong foundation in frontend, I focus on
-            delivering clean, maintainable code and intuitive user experiences.
+            These are the tools and technologies that I use as a computer
+            science student. I leverage them to turn ideas into fully functional
+            applications that solve real-world problems.
           </p>
 
           <span className="py-4 px-2 space-x-2 rounded-lg bg-secondary shadow-lg">
-            <button className="rounded-lg px-4 py-2 bg-blue-500 text-white transition-all duration-300">
+            <button
+              onClick={() => setActiveTab("skills")}
+              className={`rounded-lg px-4 py-2 transition-all duration-300 ${
+                activeTab === "skills"
+                  ? "bg-blue-500 text-white"
+                  : "bg-transparent text-gray-300"
+              }`}
+            >
               Skills
             </button>
-            <button className="rounded-lg px-4 py-2 bg-transparent text-gray-300 transition-all duration-300">
+            <button
+              onClick={() => setActiveTab("tools")}
+              className={`rounded-lg px-4 py-2 transition-all duration-300 ${
+                activeTab === "tools"
+                  ? "bg-blue-500 text-white"
+                  : "bg-transparent text-gray-300"
+              }`}
+            >
               Tools
             </button>
           </span>
@@ -49,28 +112,25 @@ export default function SkillsGrid() {
 
         {/* Right Side (Skills Grid) */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
-          <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
-            {[
-              { name: "Java", icon: JavaIcon },
-              { name: "Python", icon: PythonIcon },
-              { name: "C++", icon: CPlusPlusIcon },
-              { name: "JavaScript", icon: JavaScriptIcon },
-              { name: "Firebase", icon: FirebaseIcon },
-              { name: "Tensorflow", icon: TensorflowIcon },
-              { name: "React", icon: ReactIcon },
-              { name: "TailwindCSS", icon: TailwindCSSIcon },
-              { name: "Swift", icon: SwiftIcon },
-              { name: "R", icon: RIcon },
-              { name: "OpenCV", icon: OpenCVIcon },
-              { name: "NextJS", icon: NextjsIcon },
-            ].map(({ name, icon }, idx) => (
-              <div key={idx} className="text-center group">
-                <div className="p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110">
-                  <img src={icon} alt={name} className="w-10 h-10" />
-                  <p className="text-xs mt-2">{name}</p>
+          {/* Consistent rows to prevent height shifts */}
+          <div className="grid grid-cols-3 grid-rows-4 md:grid-cols-4 md:grid-rows-3 gap-4 h-96 md:h-72">
+            {list.map((name, idx) => {
+              let src = "";
+              const fileOrUrl = iconFiles[name];
+              if (fileOrUrl.startsWith("http")) {
+                src = fileOrUrl;
+              } else {
+                src = `${baseUrl}${fileOrUrl}`;
+              }
+              return (
+                <div key={idx} className="text-center group">
+                  <div className="p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110">
+                    <img src={src} alt={name} className="w-10 h-10" />
+                    <p className="text-xs mt-2">{name}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>
