@@ -74,7 +74,7 @@ export default function Navbar() {
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               {/* Mobile menu button */}
-              <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+              {/* <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-none focus:ring-inset">
                   <span className="sr-only">Open main menu</span>
                   <div className="grid justify-items-center gap-1.5">
@@ -95,16 +95,16 @@ export default function Navbar() {
                     />
                   </div>
                 </DisclosureButton>
-              </div>
+              </div> */}
 
               {/* Logo & Desktop Nav */}
-              <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex flex-1 items-center justify-start sm:items-stretch sm:justify-start">
                 <div className="flex shrink-0 items-center">
                   <a href="#intro">
                     <img
                       src={logoV1}
                       alt="SK Logo"
-                      className="h-8 w-auto cursor-pointer"
+                      className="h-8 w-auto cursor-pointer ml-2"
                     />
                   </a>
                 </div>
@@ -114,9 +114,15 @@ export default function Navbar() {
                       const sectionId = item.href.slice(1);
                       const isActive = activeSection === sectionId;
                       return (
-                        <a
+                        <button
                           key={item.name}
-                          href={item.href}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            const target = document.getElementById(sectionId);
+                            if (target) {
+                              target.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }}
                           aria-current={isActive ? "page" : undefined}
                           className={classNames(
                             isActive
@@ -126,7 +132,7 @@ export default function Navbar() {
                           )}
                         >
                           {item.name}
-                        </a>
+                        </button>
                       );
                     })}
                   </div>
@@ -163,9 +169,15 @@ export default function Navbar() {
                   const sectionId = item.href.slice(1);
                   const isActive = activeSection === sectionId;
                   return (
-                    <a
+                    <button
                       key={item.name}
-                      href={item.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        const target = document.getElementById(sectionId);
+                        if (target) {
+                          target.scrollIntoView({ behavior: "smooth" });
+                        }
+                      }}
                       aria-current={isActive ? "page" : undefined}
                       className={classNames(
                         isActive
@@ -175,7 +187,7 @@ export default function Navbar() {
                       )}
                     >
                       {item.name}
-                    </a>
+                    </button>
                   );
                 })}
                 {/* Also include Resume in mobile menu */}

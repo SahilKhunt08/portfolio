@@ -19,6 +19,7 @@ export default function Contact() {
           skhun@illinois.edu
         </a>
         <a
+          href="https://www.linkedin.com/in/sahilkhunt/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:underline"

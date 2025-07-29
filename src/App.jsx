@@ -14,7 +14,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="font-sans text-gray-900 pt-16">
+    <div className="font-sans text-gray-900">
       <Navbar />
       <Intro />
       {/* <SkillsCarousel /> */}
