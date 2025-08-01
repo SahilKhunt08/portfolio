@@ -16,7 +16,7 @@ export default function About() {
       id: 1,
       Icon: CodeBracketIcon,
       title: "FiPet (fipet.dev)",
-      time: "June 2025 - Now",
+      time: "May 2025 - Now",
       gradientFrom: "yellow-600",
       gradientTo: "orange-500",
       timeBgClass: "bg-yellow-700",
