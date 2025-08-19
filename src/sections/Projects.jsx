@@ -26,20 +26,6 @@ export default function Projects() {
       type: "AI",
     },
     {
-      title: "Impulse Workout App",
-      description:
-        "A collaborative fitness app that helps users create, share, and follow workout routines with real-time progress tracking.",
-      techStack: ["React Native", "Expo", "Firebase"],
-      features: [
-        "Intuitive workout builder for easily creating and organizing custom routines.",
-        "Timed workouts with rest intervals and progress tracking.",
-        "Multiple fitness APIs providing detailed exercise data.",
-        "Custom leaderboards and challenges to compete with friends.",
-      ],
-      images: [impulse1, impulse2, impulse3],
-      type: "Mobile",
-    },
-    {
       title: "C.H.E.R. – Comprehensive Human Emotion Recognition",
       description:
         "C.H.E.R. uses AI and computer vision to help parents and schools detect early signs of depression in teens, aiming to prevent suicide by notifying trusted adults so teens can get the help they need.",
@@ -58,6 +44,20 @@ export default function Projects() {
       ],
       images: [cher1],
       type: "AI",
+    },
+    {
+      title: "Impulse Workout App",
+      description:
+        "A collaborative fitness app that helps users create, share, and follow workout routines with real-time progress tracking.",
+      techStack: ["React Native", "Expo", "Firebase"],
+      features: [
+        "Intuitive workout builder for easily creating and organizing custom routines.",
+        "Timed workouts with rest intervals and progress tracking.",
+        "Multiple fitness APIs providing detailed exercise data.",
+        "Custom leaderboards and challenges to compete with friends.",
+      ],
+      images: [impulse1, impulse2, impulse3],
+      type: "Mobile",
     },
     {
       title: "Webscrapers",
