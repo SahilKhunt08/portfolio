@@ -17,26 +17,31 @@ const darkerMap = {
  * Props:
  *  - Icon: React component for the circle icon
  *  - title: string title of the card
+ *  - position: string position/role (displayed as subline under title)
  *  - time: string timestamp
  *  - children: description content (string or JSX)
  *  - gradientFrom: Tailwind color (e.g. 'yellow-600')
  *  - gradientTo: Tailwind color (e.g. 'orange-500')
  *  - align: 'start' | 'end' to control card placement on desktop
+ *  - timeBgClass: optional string of Tailwind classes to override the time badge background (supports gradients)
  */
 export default function TimelineCard({
   Icon,
   title,
+  position,
   time,
   children,
   gradientFrom,
   gradientTo,
   align = "end",
+  timeBgClass,
 }) {
   // decide which side to float on desktop
   const justifyClass = align === "start" ? "justify-start" : "justify-end";
   const marginClass = align === "start" ? "ml-12" : "mr-12";
 
-  const timeBgClass = darkerMap[gradientFrom] || "bg-black bg-opacity-50";
+  const resolvedTimeBgClass =
+    timeBgClass || darkerMap[gradientFrom] || "bg-black bg-opacity-50";
 
   return (
     <li className={`relative w-full flex ${justifyClass} `}>
@@ -56,13 +61,15 @@ export default function TimelineCard({
           relative w-full max-w-md p-6 rounded-xl shadow-lg
           ${marginClass}
           bg-gradient-to-r from-${gradientFrom} to-${gradientTo}
+          transform transition-all duration-300 ease-in-out
+          hover:scale-105 hover:shadow-2xl hover:shadow-black/25
         `}
       >
         {/* Timestamp */}
         <time
           className={`
             absolute top-4 right-4
-            ${timeBgClass}
+            ${resolvedTimeBgClass}
             text-gray-100
             text-xs px-2 py-0.5 rounded-full
           `}
@@ -71,7 +78,12 @@ export default function TimelineCard({
         </time>
 
         {/* Title */}
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <h3 className="text-xl font-semibold mb-1">{title}</h3>
+
+        {/* Position */}
+        {position && (
+          <p className="text-gray-200 text-sm font-medium mb-2">{position}</p>
+        )}
 
         {/* Description */}
         <p className="text-gray-100">{children}</p>
