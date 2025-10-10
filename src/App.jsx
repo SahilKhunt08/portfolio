@@ -1,6 +1,4 @@
 import { useState, Suspense, lazy } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 
 import Intro from "./sections/Intro";
 import Navbar from "./components/Navbar";

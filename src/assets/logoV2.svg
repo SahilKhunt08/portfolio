@@ -1,0 +1,7 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- White rounded square background - fills entire space -->
+  <rect x="0" y="0" width="200" height="200" rx="20" ry="20" fill="white" stroke="none"/>
+  
+  <!-- SK initials in black -->
+  <text x="100" y="110" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="120" font-weight="500" text-anchor="middle" fill="black" dominant-baseline="middle">SK</text>
+</svg>

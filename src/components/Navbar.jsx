@@ -6,7 +6,7 @@ import {
   Transition,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import logoV1 from "../assets/logoV1.png";
+import logoV2 from "../assets/logoV2.svg";
 
 const navigation = [
   { name: "About", href: "#about" },
@@ -102,7 +102,7 @@ export default function Navbar() {
                 <div className="flex shrink-0 items-center">
                   <a href="#intro">
                     <img
-                      src={logoV1}
+                      src={logoV2}
                       alt="SK Logo"
                       className="h-8 w-auto cursor-pointer ml-2"
                     />
