@@ -8,15 +8,19 @@ export default function SkillsGrid() {
     Java: "Java-Dark.svg",
     Python: "Python-Dark.svg",
     "C++": "CPP.svg",
+    C: "C.svg",
     JavaScript: "JavaScript.svg",
     Firebase: "Firebase-Dark.svg",
     Tensorflow: "TensorFlow-Dark.svg",
     React: "React-Dark.svg",
+    "Node.js": "NodeJS-Dark.svg",
     TailwindCSS: "TailwindCSS-Dark.svg",
     Swift: "Swift.svg",
     R: "R-Dark.svg",
     OpenCV: "OpenCV-Dark.svg",
     NextJS: "NextJS-Dark.svg",
+    MongoDB: "MongoDB.svg",
+    SQL: "MySQL-Dark.svg",
     // tools
     "VS Code": "VSCode-Dark.svg",
     Xcode:
@@ -32,18 +36,25 @@ export default function SkillsGrid() {
   };
 
   const skills = [
+    // Languages
     "Java",
     "Python",
     "C++",
+    "C",
     "JavaScript",
-    "Firebase",
-    "Tensorflow",
-    "React",
-    "TailwindCSS",
     "Swift",
     "R",
-    "OpenCV",
+    // Databases
+    "MongoDB",
+    "SQL",
+    "Firebase",
+    // Everything else
+    "React",
+    "Node.js",
     "NextJS",
+    "TailwindCSS",
+    "Tensorflow",
+    "OpenCV",
   ];
 
   const tools = [
@@ -113,7 +124,7 @@ export default function SkillsGrid() {
         {/* Right Side (Skills Grid) */}
         <div className="w-full md:w-1/2 flex justify-center items-center">
           {/* Consistent rows to prevent height shifts */}
-          <div className="grid grid-cols-3 grid-rows-4 md:grid-cols-4 md:grid-rows-3 gap-4 h-96 md:h-72">
+          <div className="grid grid-cols-3 grid-rows-6 md:grid-cols-4 md:grid-rows-4 gap-4 h-[28rem] md:h-96">
             {list.map((name, idx) => {
               let src = "";
               const fileOrUrl = iconFiles[name];
