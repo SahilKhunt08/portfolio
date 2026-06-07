@@ -123,7 +123,7 @@ export default function SkillsGrid() {
 
         {/* Right Side (Skills Grid) */}
         <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-0">
-          <div className="grid grid-cols-4 grid-rows-4 gap-2 md:gap-4 w-full h-[23rem] md:h-96">
+          <div className="grid grid-cols-4 grid-rows-4 gap-3 md:gap-4 w-full h-[32rem] md:h-96">
             {list.map((name, idx) => {
               let src = "";
               const fileOrUrl = iconFiles[name];
@@ -133,10 +133,10 @@ export default function SkillsGrid() {
                 src = `${baseUrl}${fileOrUrl}`;
               }
               return (
-                <div key={idx} className="text-center group min-h-0">
-                  <div className="p-2 md:p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110 h-full">
-                    <img src={src} alt={name} className="w-8 h-8 md:w-11 md:h-11 shrink-0" />
-                    <p className="text-[10px] md:text-xs mt-1 md:mt-2 leading-tight h-8 md:h-10 flex items-center justify-center text-center line-clamp-2">
+                <div key={idx} className="text-center group">
+                  <div className="p-2.5 md:p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110 h-full">
+                    <img src={src} alt={name} className="w-12 h-12 md:w-11 md:h-11 shrink-0" />
+                    <p className="text-xs mt-1.5 leading-snug min-h-[2.75rem] w-full flex items-center justify-center text-center px-0.5">
                       {name}
                     </p>
                   </div>
@@ -148,9 +148,9 @@ export default function SkillsGrid() {
               length: Math.max(0, skills.length - list.length),
             }).map((_, idx) => (
               <div key={`empty-${idx}`} className="invisible min-h-0" aria-hidden="true">
-                <div className="p-2 md:p-4 bg-secondary rounded-lg flex flex-col justify-center items-center h-full">
-                  <div className="w-8 h-8 md:w-11 md:h-11" />
-                  <p className="text-[10px] md:text-xs mt-1 md:mt-2 h-8 md:h-10">&nbsp;</p>
+                <div className="p-2.5 md:p-4 bg-secondary rounded-lg flex flex-col justify-center items-center h-full">
+                  <div className="w-12 h-12 md:w-11 md:h-11" />
+                  <p className="text-xs mt-1.5 min-h-[2.75rem]">&nbsp;</p>
                 </div>
               </div>
             ))}

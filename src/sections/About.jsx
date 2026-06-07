@@ -105,20 +105,6 @@ export default function About() {
     },
     {
       id: 1,
-      Icon: BeakerIcon,
-      title: "Social Computing Systems Lab",
-      position: "Software Engineering Researcher",
-      time: "Sept. 2025 - Jan. 2026",
-      gradientFrom: "rose-500",
-      gradientTo: "pink-400",
-      timeBgClass: "bg-gradient-to-r from-rose-600 to-pink-500",
-      gradient: "from-rose-500 to-pink-400",
-      align: "start",
-      description:
-        "Building an AI-powered networking platform that connects researchers across academic conferences by analyzing and structuring data from thousands of research papers and profiles.",
-    },
-    {
-      id: 2,
       Icon: CodeBracketIcon,
       title: "Disruption Lab",
       position: null,
@@ -127,7 +113,7 @@ export default function About() {
       gradientTo: "blue-400",
       timeBgClass: "bg-gradient-to-r from-cyan-600 to-blue-500",
       gradient: "from-cyan-500 to-blue-400",
-      align: "end",
+      align: "start",
       description: (
         <>
           <div className="mb-4">
@@ -152,6 +138,20 @@ export default function About() {
           </div>
         </>
       ),
+    },
+    {
+      id: 2,
+      Icon: BeakerIcon,
+      title: "Social Computing Systems Lab",
+      position: "Software Engineering Researcher",
+      time: "Sept. 2025 - Jan. 2026",
+      gradientFrom: "rose-500",
+      gradientTo: "pink-400",
+      timeBgClass: "bg-gradient-to-r from-rose-600 to-pink-500",
+      gradient: "from-rose-500 to-pink-400",
+      align: "end",
+      description:
+        "Building an AI-powered networking platform that connects researchers across academic conferences by analyzing and structuring data from thousands of research papers and profiles.",
     },
     {
       id: 3,
