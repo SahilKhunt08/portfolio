@@ -23,7 +23,7 @@ function MobileTimelineCard({ card, idx, delay }) {
       {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     if (cardRef.current) {
@@ -52,26 +52,26 @@ function MobileTimelineCard({ card, idx, delay }) {
         <card.Icon className="w-4 h-4 text-black" aria-hidden="true" />
       </span>
       <div
-        className={`ml-16 mr-4 flex-1 p-4 rounded-lg shadow-lg ${
+        className={`ml-16 mr-4 flex-1 p-4 rounded-lg shadow-lg text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.35)] ${
           idx % 2 === 1 ? "bg-gradient-to-l" : "bg-gradient-to-r"
         } ${
           card.gradient
         } transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-black/25`}
       >
         <div className="flex justify-between items-start gap-3 mb-1">
-          <h3 className="text-lg font-semibold min-w-0">{card.title}</h3>
+          <h3 className="text-lg font-semibold min-w-0 text-white">{card.title}</h3>
           <time
-            className={`flex-shrink-0 ${card.timeBgClass} whitespace-nowrap text-gray-100 text-xs px-2 py-0.5 rounded-full`}
+            className={`flex-shrink-0 ${card.timeBgClass} whitespace-nowrap text-white text-xs px-2 py-0.5 rounded-full`}
           >
             {card.time}
           </time>
         </div>
         {card.position && (
-          <p className="text-gray-200 text-sm font-medium mb-2">
+          <p className="text-white text-sm font-medium mb-2">
             {card.position}
           </p>
         )}
-        <div className="text-gray-100 text-sm">{card.description}</div>
+        <div className="text-white text-sm">{card.description}</div>
       </div>
     </li>
   );
@@ -131,19 +131,23 @@ export default function About() {
       description: (
         <>
           <div className="mb-4">
-            <p className="text-gray-200 text-sm font-semibold mb-1">
+            <p className="text-white text-sm font-semibold mb-1">
               Technical Lead • Jan. 2026 - Now
             </p>
-            <p className="text-gray-100">
-              Leading a five-engineer team to build a CSV-based automation system for CSC Global that supports year-over-year test maintenance. 
+            <p className="text-white">
+              Leading a five-engineer team to build a CSV-based automation
+              system for CSC Global that supports year-over-year test
+              maintenance.
             </p>
           </div>
           <div className="pt-3 border-t border-cyan-300/30">
-            <p className="text-gray-200 text-sm font-semibold mb-1">
+            <p className="text-white text-sm font-semibold mb-1">
               Software Engineer • Sept. 2025 - Dec. 2025
             </p>
-            <p className="text-gray-100">
-              Developing intelligent automation systems that curate and synthesize emerging AI research to help faculty stay current with the latest developments in the field.
+            <p className="text-white">
+              Developing intelligent automation systems that curate and
+              synthesize emerging AI research to help faculty stay current with
+              the latest developments in the field.
             </p>
           </div>
         </>
@@ -174,7 +178,7 @@ export default function About() {
       gradient: "from-amber-500 to-orange-400",
       align: "start",
       description:
-        "As Head of Application Development, lead the engineering team behind FiPet—a financial education app that helps kids learn money skills—and its product website at fipet.dev.",
+        "Leading application development for FiPet, a financial education app that helps kids build financial literacy, along with its product website at fipet.dev.",
     },
     {
       id: 4,

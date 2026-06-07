@@ -106,18 +106,19 @@ export default function TimelineCard({
           relative w-full max-w-md p-6 rounded-xl shadow-lg
           ${marginClass}
           bg-gradient-to-r from-${gradientFrom} to-${gradientTo}
+          text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.35)]
           transform transition-all duration-300 ease-in-out
           hover:scale-105 hover:shadow-2xl hover:shadow-black/25
         `}
       >
         {/* Header: title + timestamp */}
         <div className="flex justify-between items-start gap-3 mb-1">
-          <h3 className="text-xl font-semibold min-w-0">{title}</h3>
+          <h3 className="text-xl font-semibold min-w-0 text-white">{title}</h3>
           <time
             className={`
               flex-shrink-0
               ${resolvedTimeBgClass}
-              text-gray-100
+              text-white
               text-xs px-2 py-0.5 rounded-full whitespace-nowrap
             `}
           >
@@ -127,11 +128,11 @@ export default function TimelineCard({
 
         {/* Position */}
         {position && (
-          <p className="text-gray-200 text-sm font-medium mb-2">{position}</p>
+          <p className="text-white text-sm font-medium mb-2">{position}</p>
         )}
 
         {/* Description */}
-        <p className="text-gray-100">{children}</p>
+        <p className="text-white">{children}</p>
       </div>
     </li>
   );
