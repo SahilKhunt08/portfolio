@@ -1,18 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function SkillsGrid() {
   const [activeTab, setActiveTab] = useState("skills");
-  const [gridRows, setGridRows] = useState("repeat(6, 1fr)");
-
-  useEffect(() => {
-    const updateGridRows = () => {
-      setGridRows(window.innerWidth >= 768 ? "repeat(4, 1fr)" : "repeat(6, 1fr)");
-    };
-    
-    updateGridRows();
-    window.addEventListener("resize", updateGridRows);
-    return () => window.removeEventListener("resize", updateGridRows);
-  }, []);
 
   const iconFiles = {
     // skills
@@ -85,7 +74,7 @@ export default function SkillsGrid() {
     "https://cdn.jsdelivr.net/gh/tandpfun/skill-icons@main/icons/";
 
   return (
-    <section className="py-30 w-full bg-[#0A0A0A] text-white flex justify-center">
+    <section className="py-16 md:py-30 pb-20 w-full bg-[#0A0A0A] text-white flex justify-center">
       <div className="container mx-auto flex flex-col md:flex-row items-center md:items-start gap-16">
         {/* Left Side */}
         <div className="w-full md:w-1/2 relative p-6 sm:px-28 md:p-0">
@@ -133,15 +122,8 @@ export default function SkillsGrid() {
         </div>
 
         {/* Right Side (Skills Grid) */}
-        <div className="w-full md:w-1/2 flex justify-center items-center">
-          {/* Consistent rows to prevent height shifts - use grid-template-rows for equal row heights */}
-          {/* Mobile: 3 cols x 6 rows = 18 slots, Desktop: 4 cols x 4 rows = 16 slots */}
-          <div 
-            className="grid grid-cols-3 md:grid-cols-4 gap-4 h-[28rem] md:h-96"
-            style={{
-              gridTemplateRows: gridRows,
-            }}
-          >
+        <div className="w-full md:w-1/2 flex justify-center items-center px-4 md:px-0">
+          <div className="grid grid-cols-4 grid-rows-4 gap-2 md:gap-4 w-full h-[23rem] md:h-96">
             {list.map((name, idx) => {
               let src = "";
               const fileOrUrl = iconFiles[name];
@@ -151,22 +133,24 @@ export default function SkillsGrid() {
                 src = `${baseUrl}${fileOrUrl}`;
               }
               return (
-                <div key={idx} className="text-center group">
-                  <div className="p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110 h-full">
-                    <img src={src} alt={name} className="w-11 h-11" />
-                    <p className="text-xs mt-2">{name}</p>
+                <div key={idx} className="text-center group min-h-0">
+                  <div className="p-2 md:p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center transition-transform duration-300 transform group-hover:scale-110 h-full">
+                    <img src={src} alt={name} className="w-8 h-8 md:w-11 md:h-11 shrink-0" />
+                    <p className="text-[10px] md:text-xs mt-1 md:mt-2 leading-tight h-8 md:h-10 flex items-center justify-center text-center line-clamp-2">
+                      {name}
+                    </p>
                   </div>
                 </div>
               );
             })}
             {/* Fill empty slots to maintain consistent spacing when switching tabs */}
-            {Array.from({ 
-              length: Math.max(0, skills.length - list.length)
+            {Array.from({
+              length: Math.max(0, skills.length - list.length),
             }).map((_, idx) => (
-              <div key={`empty-${idx}`} className="text-center group opacity-0 pointer-events-none">
-                <div className="p-4 bg-secondary rounded-lg shadow-lg flex flex-col justify-center items-center h-full">
-                  <div className="w-11 h-11" />
-                  <p className="text-xs mt-2"></p>
+              <div key={`empty-${idx}`} className="invisible min-h-0" aria-hidden="true">
+                <div className="p-2 md:p-4 bg-secondary rounded-lg flex flex-col justify-center items-center h-full">
+                  <div className="w-8 h-8 md:w-11 md:h-11" />
+                  <p className="text-[10px] md:text-xs mt-1 md:mt-2 h-8 md:h-10">&nbsp;</p>
                 </div>
               </div>
             ))}

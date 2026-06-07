@@ -1,4 +1,4 @@
-import { useState, Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 
 import Intro from "./sections/Intro";
 import Navbar from "./components/Navbar";
@@ -20,8 +20,6 @@ const SectionLoader = () => (
 );
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="font-sans text-gray-900">
       <Navbar />

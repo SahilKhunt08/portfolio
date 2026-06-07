@@ -174,7 +174,7 @@ export default function About() {
       gradient: "from-amber-500 to-orange-400",
       align: "start",
       description:
-        "Oversaw the development of a product website as Web Dev Lead, managing a team at a startup to highlight their app.",
+        "As Head of Application Development, lead the engineering team behind FiPet—a financial education app that helps kids learn money skills—and its product website at fipet.dev.",
     },
     {
       id: 4,

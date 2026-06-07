@@ -1,12 +1,85 @@
-# React + Vite
+# Sahil Khunt — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio site showcasing my work, experience, and skills.
 
-Currently, two official plugins are available:
+**Live site:** [sahilkhunt08.github.io/portfolio](https://SahilKhunt08.github.io/portfolio)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Intro** — Animated hero with typewriter effect and particle background
+- **About** — Bio, skills grid, and experience timeline with scroll animations
+- **Projects** — Project cards with image carousels and tech stack tags
+- **Contact** — Email, LinkedIn, and GitHub links
+- Responsive navbar with auto-hide on scroll and mobile menu
+- Lazy-loaded sections for faster initial load
+- Downloadable resume (`public/resume.pdf`)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+
+- [React 19](https://react.dev/) + [Vite 6](https://vite.dev/)
+- [Tailwind CSS 4](https://tailwindcss.com/)
+- [Motion](https://motion.dev/) — animations
+- [Headless UI](https://headlessui.com/) — accessible UI components
+- [Swiper](https://swiperjs.com/) — project image carousels
+- [tsParticles](https://particles.js.org/) — particle effects
+- Deployed with [gh-pages](https://github.com/tschaub/gh-pages)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Install & run
+
+```bash
+npm install
+npm run dev
+```
+
+The dev server starts at `http://localhost:5173`.
+
+### Other scripts
+
+| Command | Description |
+|---|---|
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview the production build locally |
+| `npm run lint` | Run ESLint |
+| `npm run deploy` | Build and deploy to GitHub Pages |
+
+## Project Structure
+
+```
+src/
+├── components/     # Reusable UI (Navbar, ProjectCard, TimelineCard, etc.)
+├── sections/       # Page sections (Intro, About, Projects, Contact)
+├── assets/         # Images, logos, skill icons
+├── App.jsx         # Root layout and lazy-loaded sections
+└── main.jsx        # Entry point
+public/
+└── resume.pdf      # Downloadable resume
+```
+
+## Deployment
+
+This site is deployed to GitHub Pages at `/portfolio/`. The base path is set in `vite.config.js`:
+
+```js
+base: "/portfolio/",
+```
+
+To deploy after making changes:
+
+```bash
+npm run deploy
+```
+
+This runs `vite build` and pushes the `dist/` folder to the `gh-pages` branch.
+
+## Contact
+
+- **Email:** [skhun@illinois.edu](mailto:skhun@illinois.edu)
+- **LinkedIn:** [linkedin.com/in/sahilkhunt](https://www.linkedin.com/in/sahilkhunt/)
+- **GitHub:** [github.com/SahilKhunt08](https://github.com/SahilKhunt08)

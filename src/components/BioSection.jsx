@@ -23,12 +23,12 @@ export default function BioSection() {
         <div className="hidden md:block w-[2px] bg-gray-700 self-stretch" />
 
         {/* Text */}
-        <div className="md:w-1/2">
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 to-pink-300 text-center md:text-left">
+        <div className="w-full max-w-lg mx-auto md:max-w-none md:mx-0 md:w-1/2">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-indigo-200 to-pink-300 text-left">
             About Me
           </h2>
-          <div className="w-20 h-1 bg-blue-500 mb-6 mx-auto md:mx-0 rounded"></div>
-          <p className="text-gray-200 leading-relaxed text-center md:text-left">
+          <div className="w-20 h-1 bg-blue-500 mb-6 rounded"></div>
+          <p className="text-gray-200 leading-relaxed text-left text-pretty">
             Hi, my name is Sahil, and I'm a Computer Science student at the
             University of Illinois Urbana-Champaign. I have a passion for
             building innovative software solutions and exploring the latest
@@ -43,16 +43,4 @@ export default function BioSection() {
       </div>
     </section>
   );
-}
-
-{
-  /* 
-  
-Hi, my name is Sahil, and I'm a Computer Science student at UIUC. 
-I have a passion for building innovative software solutions and exploring the latest technologies. 
-My journey has taken me through full-stack web development, AI research, and even rocket guidance systems. 
-I'm always eager to learn and collaborate on exciting projects that push the boundaries of what's possible in tech.
-  
-  
-*/
 }
