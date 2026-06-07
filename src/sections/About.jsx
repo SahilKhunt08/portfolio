@@ -58,10 +58,10 @@ function MobileTimelineCard({ card, idx, delay }) {
           card.gradient
         } transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:shadow-black/25`}
       >
-        <div className="flex justify-between items-center mb-1">
-          <h3 className="text-lg font-semibold">{card.title}</h3>
+        <div className="flex justify-between items-start gap-3 mb-1">
+          <h3 className="text-lg font-semibold min-w-0">{card.title}</h3>
           <time
-            className={`${card.timeBgClass} whitespace-nowrap text-gray-100 text-xs px-2 py-0.5 rounded-full`}
+            className={`flex-shrink-0 ${card.timeBgClass} whitespace-nowrap text-gray-100 text-xs px-2 py-0.5 rounded-full`}
           >
             {card.time}
           </time>
@@ -84,21 +84,36 @@ import {
   CalculatorIcon,
   BeakerIcon,
   GlobeAltIcon,
+  BuildingOfficeIcon,
 } from "@heroicons/react/24/solid";
 
 export default function About() {
   const cardsData = [
     {
+      id: 7,
+      Icon: BuildingOfficeIcon,
+      title: "Wells Fargo",
+      position: "Software Engineering Intern",
+      time: "June 2026 - Now",
+      gradientFrom: "red-600",
+      gradientTo: "rose-500",
+      timeBgClass: "bg-gradient-to-r from-red-700 to-rose-600",
+      gradient: "from-red-600 to-rose-500",
+      align: "end",
+      description:
+        "Building and maintaining enterprise software systems as part of the technology team.",
+    },
+    {
       id: 1,
       Icon: BeakerIcon,
       title: "Social Computing Systems Lab",
       position: "Software Engineering Researcher",
-      time: "Sept. 2025 - Now",
+      time: "Sept. 2025 - Jan. 2026",
       gradientFrom: "rose-500",
       gradientTo: "pink-400",
       timeBgClass: "bg-gradient-to-r from-rose-600 to-pink-500",
       gradient: "from-rose-500 to-pink-400",
-      align: "end",
+      align: "start",
       description:
         "Building an AI-powered networking platform that connects researchers across academic conferences by analyzing and structuring data from thousands of research papers and profiles.",
     },
@@ -112,7 +127,7 @@ export default function About() {
       gradientTo: "blue-400",
       timeBgClass: "bg-gradient-to-r from-cyan-600 to-blue-500",
       gradient: "from-cyan-500 to-blue-400",
-      align: "start",
+      align: "end",
       description: (
         <>
           <div className="mb-4">
@@ -144,20 +159,20 @@ export default function About() {
             href="https://fipet.dev"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-inherit hover:text-blue-200 hover:underline transition-colors"
+            className="text-inherit hover:text-blue-400 hover:underline transition-colors"
           >
             fipet.dev
           </a>
           )
         </>
       ),
-      position: "Web Dev Lead",
+      position: "Head of Application Development",
       time: "May 2025 - Now",
       gradientFrom: "amber-500",
       gradientTo: "orange-400",
       timeBgClass: "bg-gradient-to-r from-amber-600 to-orange-500",
       gradient: "from-amber-500 to-orange-400",
-      align: "end",
+      align: "start",
       description:
         "Oversaw the development of a product website as Web Dev Lead, managing a team at a startup to highlight their app.",
     },
@@ -166,26 +181,35 @@ export default function About() {
       Icon: RocketLaunchIcon,
       title: "Illinois Space Society (ISS)",
       position: "GNC Software Engineer",
-      time: "Sept. 2024 - Now",
+      time: "Sept. 2024 - Jan. 2026",
       gradientFrom: "indigo-600",
       gradientTo: "purple-500",
       timeBgClass: "bg-gradient-to-r from-indigo-700 to-purple-600",
       gradient: "from-indigo-600 to-purple-500",
-      align: "start",
+      align: "end",
       description:
         "Developed Lyapunov-stable neural controllers and Kalman-filter trackers for quadrotor and rocket guidance on the GNC sub-team.",
     },
     {
       id: 5,
       Icon: AcademicCapIcon,
-      title: "CompSci Kids",
+      title: (
+        <a
+          href="https://compscikids.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-inherit hover:text-blue-400 hover:underline transition-colors"
+        >
+          CompSci Kids
+        </a>
+      ),
       position: "Club Leader",
       time: "Aug. 2022 - May 2024",
       gradientFrom: "emerald-600",
       gradientTo: "teal-500",
       timeBgClass: "bg-gradient-to-r from-emerald-700 to-teal-600",
       gradient: "from-emerald-600 to-teal-500",
-      align: "end",
+      align: "start",
       description:
         "Led a club teaching 5–8ᵗʰ graders CS fundamentals: built custom curriculum, supervised volunteers, and ran weekly classes.",
     },
@@ -199,7 +223,7 @@ export default function About() {
       gradientTo: "blue-500",
       timeBgClass: "bg-gradient-to-r from-sky-700 to-blue-600",
       gradient: "from-sky-600 to-blue-500",
-      align: "start",
+      align: "end",
       description:
         "Tutored K–12 students in foundational math skills, offering both homework assistance and exam preparation as lead instructor.",
     },

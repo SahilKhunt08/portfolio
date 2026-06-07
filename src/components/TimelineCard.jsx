@@ -110,20 +110,20 @@ export default function TimelineCard({
           hover:scale-105 hover:shadow-2xl hover:shadow-black/25
         `}
       >
-        {/* Timestamp */}
-        <time
-          className={`
-            absolute top-4 right-4
-            ${resolvedTimeBgClass}
-            text-gray-100
-            text-xs px-2 py-0.5 rounded-full
-          `}
-        >
-          {time}
-        </time>
-
-        {/* Title */}
-        <h3 className="text-xl font-semibold mb-1">{title}</h3>
+        {/* Header: title + timestamp */}
+        <div className="flex justify-between items-start gap-3 mb-1">
+          <h3 className="text-xl font-semibold min-w-0">{title}</h3>
+          <time
+            className={`
+              flex-shrink-0
+              ${resolvedTimeBgClass}
+              text-gray-100
+              text-xs px-2 py-0.5 rounded-full whitespace-nowrap
+            `}
+          >
+            {time}
+          </time>
+        </div>
 
         {/* Position */}
         {position && (
