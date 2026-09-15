@@ -94,14 +94,14 @@ export default function About() {
       Icon: BuildingOfficeIcon,
       title: "Wells Fargo",
       position: "Software Engineering Intern",
-      time: "June 2026 - Now",
+      time: "June 2026 - Aug. 2026",
       gradientFrom: "red-600",
       gradientTo: "rose-500",
       timeBgClass: "bg-gradient-to-r from-red-700 to-rose-600",
       gradient: "from-red-600 to-rose-500",
       align: "end",
       description:
-        "Building and maintaining enterprise software systems as part of the technology team.",
+        "Built an internal testing platform that helped developers validate and improve enterprise software systems.",
     },
     {
       id: 1,
@@ -170,15 +170,15 @@ export default function About() {
           )
         </>
       ),
-      position: "Head of Application Development",
-      time: "May 2025 - Now",
+      position: "Software Engineering Intern",
+      time: "May 2025 - Aug. 2025",
       gradientFrom: "amber-500",
       gradientTo: "orange-400",
       timeBgClass: "bg-gradient-to-r from-amber-600 to-orange-500",
       gradient: "from-amber-500 to-orange-400",
       align: "start",
       description:
-        "Leading application development for FiPet, a financial education app that helps kids build financial literacy, along with its product website at fipet.dev.",
+        "Helped build and improve a financial literacy app focused on making financial education more engaging for students.",
     },
     {
       id: 4,
